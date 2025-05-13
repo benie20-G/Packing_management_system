@@ -15,3 +15,9 @@
 2025-05-13 09:00:51 - RAH972U - Status: SUCCESS, Old Balance: 27200, New Balance: 24400
 2025-05-13 09:01:40 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 24400, New Balance: 24400
 2025-05-13 09:01:56 - RAH972U - Status: SUCCESS, Old Balance: 24400, New Balance: 21600
+2025-05-13 09:47:02 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 7600, New Balance: 7600
+2025-05-13 09:47:10 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 7600, New Balance: 7600
+2025-05-13 09:47:35 - RAH972U - Status: SUCCESS, Old Balance: 7600, New Balance: 4800
+2025-05-13 09:50:01 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
+2025-05-13 09:50:30 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
+2025-05-13 09:50:33 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
