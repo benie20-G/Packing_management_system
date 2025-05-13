@@ -10,7 +10,7 @@ from collections import Counter
 import random
 
 # Load YOLOv8 model (same model as entry)
-model = YOLO('C:/Users/iratu/Downloads/best.pt')
+model = YOLO('/home/viateur/Documents/parking-management-system/best.pt')
 
 # CSV log file
 csv_file = 'plates_log.csv'
