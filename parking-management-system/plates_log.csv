@@ -1,4 +1,2 @@
-Plate Number,Payment Status,Timestamp
-RAB123A,0,2025-05-12 19:51:37
-RAB123A,0,2025-05-12 19:51:37
-RAH972U,1,2025-05-16 19:20:44
+Plate Number,Payment Status,Timestamp,Payment Timestamp
+RAH972U,1,2025-05-30 20:35:56,2025-05-30 21:33:48
