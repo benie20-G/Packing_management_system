@@ -1,5 +1,4 @@
 import math
-
 import serial
 import csv
 from datetime import datetime, timedelta
@@ -11,8 +10,7 @@ HOURLY_RATE = 200  # Example hourly rate (200 RWF per hour)
 MINIMUM_BALANCE = 500
 
 # Initialize serial connection
-ser = serial.Serial('COM9', 9600, timeout=1)
-
+ser = serial.Serial('COM10', 9600, timeout=1)
 
 def calculate_charges(plate_number):
     """Calculate charges based on unpaid hours from CSV entries"""
@@ -34,24 +32,31 @@ def calculate_charges(plate_number):
     total_charge = unpaid_hours * HOURLY_RATE
     return total_charge, unpaid_hours
 
-
 def update_csv(plate_number):
-    """Update payment status for calculated hours"""
+    """Update payment status and add payment timestamp for calculated hours"""
     updated_rows = []
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     with open(CSV_FILE, 'r') as file:
         reader = csv.DictReader(file)
         fieldnames = reader.fieldnames
+        # Ensure 'Payment Timestamp' is in fieldnames
+        if 'Payment Timestamp' not in fieldnames:
+            fieldnames.append('Payment Timestamp')
+        
         for row in reader:
             if row['Plate Number'] == plate_number and row['Payment Status'] == '0':
                 row['Payment Status'] = '1'  # Mark as paid
+                row['Payment Timestamp'] = current_time  # Set payment timestamp
+            # Ensure 'Payment Timestamp' exists in row
+            if 'Payment Timestamp' not in row:
+                row['Payment Timestamp'] = ''  # Empty for unpaid or existing rows
             updated_rows.append(row)
 
     with open(CSV_FILE, 'w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(updated_rows)
-
 
 def process_payment(plate_number, current_balance):
     try:
@@ -70,7 +75,6 @@ def process_payment(plate_number, current_balance):
 
     except Exception as e:
         return f"PROCESSING_ERROR: {str(e)}", current_balance
-
 
 def main():
     print("Payment System Running. Waiting for RFID scans...")
@@ -115,12 +119,11 @@ def main():
             print(f"Error: {str(e)}")
             continue
 
-
 if __name__ == "__main__":
     # Create CSV file if it doesn't exist
     if not os.path.exists(CSV_FILE):
         with open(CSV_FILE, 'w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
+            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp', 'Payment Timestamp'])
 
     main()
