@@ -21,3 +21,23 @@
 2025-05-13 09:50:01 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
 2025-05-13 09:50:30 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
 2025-05-13 09:50:33 - RAH972U - Status: INSUFFICIENT_FUNDS: Need 5600, have 4800, Old Balance: 4800, New Balance: 4800
+2025-05-30 21:10:57 - RAH972U - Status: SUCCESS, Old Balance: 10000, New Balance: 9800
+2025-05-30 21:11:04 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9800, New Balance: 9800
+2025-05-30 21:11:05 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9800, New Balance: 9800
+2025-05-30 21:14:18 - RAH972U - Status: SUCCESS, Old Balance: 9800, New Balance: 9600
+2025-05-30 21:14:29 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9600, New Balance: 9600
+2025-05-30 21:14:31 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9600, New Balance: 9600
+2025-05-30 21:14:32 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9600, New Balance: 9600
+2025-05-30 21:14:44 - RAH972U - Status: SUCCESS, Old Balance: 9600, New Balance: 9400
+2025-05-30 21:14:49 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9400, New Balance: 9400
+2025-05-30 21:14:51 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9400, New Balance: 9400
+2025-05-30 21:14:52 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 9400, New Balance: 9400
+2025-05-30 21:24:43 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8800, New Balance: 8800
+2025-05-30 21:24:59 - RAH972U - Status: SUCCESS, Old Balance: 8800, New Balance: 8600
+2025-05-30 21:25:27 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8600, New Balance: 8600
+2025-05-30 21:26:05 - RAH972U - Status: SUCCESS, Old Balance: 8600, New Balance: 8400
+2025-05-30 21:29:36 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8400, New Balance: 8400
+2025-05-30 21:33:15 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8400, New Balance: 8400
+2025-05-30 21:33:29 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8400, New Balance: 8400
+2025-05-30 21:33:48 - RAH972U - Status: SUCCESS, Old Balance: 8400, New Balance: 8200
+2025-05-30 21:35:53 - RAH972U - Status: NO_PENDING_HOURS, Old Balance: 8200, New Balance: 8200

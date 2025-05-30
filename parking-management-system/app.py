@@ -1,3 +1,7 @@
+import utils.clients
+import utils.http_session
+import utils.transport
+import utils.session
 from flask import Flask, render_template, jsonify, request
 from flask_socketio import SocketIO
 import csv
@@ -109,12 +113,13 @@ def get_logs():
     try:
         with open(CSV_FILE, 'r') as f:
             reader = csv.DictReader(f)
-            logs = [row for row in reader]
+            # Ensure 'Payment Timestamp' is handled
+            logs = [dict(row, **{'Payment Timestamp': row.get('Payment Timestamp', '')}) for row in reader]
     except FileNotFoundError:
         # Create file if it doesn't exist
         with open(CSV_FILE, 'w', newline='') as f:
             writer = csv.writer(f)
-            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
+            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp', 'Payment Timestamp'])
     return jsonify(logs)
 
 @app.route('/transactions')
@@ -145,7 +150,7 @@ if __name__ == '__main__':
     if not os.path.exists(CSV_FILE):
         with open(CSV_FILE, 'w', newline='') as f:
             writer = csv.writer(f)
-            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
+            writer.writerow(['Plate Number', 'Payment Status', 'Timestamp', 'Payment Timestamp'])
     
     if not os.path.exists(PAYMENT_LOG):
         open(PAYMENT_LOG, 'w').close()
