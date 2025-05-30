@@ -21,7 +21,7 @@ csv_file = 'plates_log.csv'
 if not os.path.exists(csv_file):
     with open(csv_file, 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
+        writer.writerow(['Plate Number', 'Payment Status', 'Timestamp','Payment Timestamp'])
 
 # ===== Auto-detect Arduino Serial Port =====
 def detect_arduino_port():
@@ -62,7 +62,7 @@ while True:
     distance = mock_ultrasonic_distance()
     print(f"[SENSOR] Distance: {distance} cm")
 
-    if distance <= 150:
+    if distance <= 180:
         results = model(frame)
 
         for result in results:
