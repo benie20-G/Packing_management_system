@@ -10,7 +10,7 @@ import csv
 from collections import Counter
 
 # Load YOLOv8 model
-model = YOLO("C:/Users/iratu/Downloads/best.pt")
+model = YOLO("best.pt")
 
 # Plate save directory
 save_dir = 'plates'
@@ -62,7 +62,7 @@ while True:
     distance = mock_ultrasonic_distance()
     print(f"[SENSOR] Distance: {distance} cm")
 
-    if distance <= 50:
+    if distance <= 150:
         results = model(frame)
 
         for result in results:

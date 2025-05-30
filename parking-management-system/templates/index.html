@@ -7,77 +7,144 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
-        :root {
-            --success: #28a745;
-            --error: #dc3545;
-            --warning: #fd7e14;
-            --info: #17a2b8;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            border: none;
-        }
-        .log-container {
-            height: 300px;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            padding: 15px;
-        }
-        .log-entry {
-            padding: 8px 12px;
-            margin-bottom: 8px;
-            border-left: 4px solid;
-            background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .log-success {
-            border-left-color: var(--success);
-        }
-        .log-error {
-            border-left-color: var(--error);
-        }
-        .log-warning {
-            border-left-color: var(--warning);
-        }
-        .log-info {
-            border-left-color: var(--info);
-        }
-        .status-badge {
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .badge-success {
-            background-color: rgba(40, 167, 69, 0.2);
-            color: var(--success);
-        }
-        .badge-danger {
-            background-color: rgba(220, 53, 69, 0.2);
-            color: var(--error);
-        }
-        .badge-warning {
-            background-color: rgba(253, 126, 20, 0.2);
-            color: var(--warning);
-        }
-        .table-responsive {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        .blink {
-            animation: blink-animation 1s steps(2, start) infinite;
-        }
-        @keyframes blink-animation {
-            to { opacity: 0.5; }
-        }
-    </style>
+    :root {
+        --primary: #4e73df;
+        --success: #1cc88a;
+        --error: #e74a3b;
+        --warning: #f6c23e;
+        --info: #36b9cc;
+        --bg-light: #f1f4f9;
+        --text-muted: #6c757d;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-light);
+        color: #212529;
+        padding-bottom: 40px;
+    }
+
+    h1, h5 {
+        font-weight: 700;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+    }
+
+    .card-header {
+        background: white;
+        border-bottom: 1px solid #e3e6f0;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .status-badge {
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .badge-success {
+        background-color: rgba(28, 200, 138, 0.2);
+        color: var(--success);
+    }
+
+    .badge-danger {
+        background-color: rgba(231, 74, 59, 0.2);
+        color: var(--error);
+    }
+
+    .badge-warning {
+        background-color: rgba(246, 194, 62, 0.2);
+        color: var(--warning);
+    }
+
+    .badge-info {
+        background-color: rgba(54, 185, 204, 0.2);
+        color: var(--info);
+    }
+
+    .log-container {
+        height: 300px;
+        overflow-y: auto;
+        background: #ffffff;
+        border-radius: 0 0 12px 12px;
+        padding: 15px;
+    }
+
+    .log-entry {
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-left: 5px solid;
+        background-color: #f9f9fb;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .log-success {
+        border-left-color: var(--success);
+    }
+
+    .log-error {
+        border-left-color: var(--error);
+    }
+
+    .log-warning {
+        border-left-color: var(--warning);
+    }
+
+    .log-info {
+        border-left-color: var(--info);
+    }
+
+    .table-responsive {
+        max-height: 400px;
+        overflow-y: auto;
+        border-top: 1px solid #eaeaea;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f5fb;
+    }
+
+    .table thead {
+        background-color: #eef1f6;
+    }
+
+    .btn-outline-secondary {
+        border-radius: 30px;
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .alert-light {
+        background-color: #f9fbfc;
+        border-color: #dce3ea;
+        font-size: 0.9rem;
+    }
+
+    .blink {
+        animation: blink-animation 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink-animation {
+        50% { opacity: 0.4; }
+    }
+</style>
+
 </head>
 <body>
     <div class="container py-4">

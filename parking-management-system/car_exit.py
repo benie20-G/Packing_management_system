@@ -10,7 +10,7 @@ from collections import Counter
 import random
 
 # Load YOLOv8 model (same model as entry)
-model = YOLO('/home/viateur/Documents/parking-management-system/best.pt')
+model = YOLO('best.pt')
 
 # CSV log file
 csv_file = 'plates_log.csv'
@@ -19,7 +19,7 @@ csv_file = 'plates_log.csv'
 def detect_arduino_port():
     ports = list(serial.tools.list_ports.comports())
     for port in ports:
-        if "usbmodem" in port.device or "wchusbmodem" in port.device:
+        if "COM" in port.device or "wchusbmodem" in port.device:
             return port.device
     return None
 
@@ -61,7 +61,7 @@ while True:
     distance = mock_ultrasonic_distance()
     print(f"[SENSOR] Distance: {distance} cm")
 
-    if distance <= 50:
+    if distance <= 150:
         results = model(frame)
 
         for result in results:
